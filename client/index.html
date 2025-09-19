@@ -4,629 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RobiTech</title>
-    <style>
-         :root {
-            --hunter-green: #355E3B;
-            --hunter-green-light: #4A7751;
-            --hunter-green-dark: #2A4A2F;
-            --cream: #F5F5DC;
-            --text-light: #FFFFFF;
-            --text-dark: #333333;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            background-color: #f9f9f9;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--hunter-green);
-            color: var(--text-light);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        header.scrolled {
-            padding: 0.5rem 0;
-            background-color: var(--hunter-green-dark);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-light);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--cream);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--cream);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .burger {
-            display: none;
-            cursor: pointer;
-        }
-        
-        .burger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-light);
-            margin: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        section {
-            padding: 100px 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        /* Home Section */
-        
-        #home {
-            background: linear-gradient(to right, var(--cream) 50%, var(--hunter-green-light) 50%);
-            position: relative;
-        }
-        
-        .home-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .home-text {
-            flex: 1;
-            padding-right: 2rem;
-        }
-        
-        .home-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .home-image img {
-            max-width: 80%;
-            border-radius: 50%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-        
-        .home-text h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--hunter-green-dark);
-        }
-        
-        .home-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--hunter-green);
-            color: var(--text-light);
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: var(--hunter-green-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        /* Services Section */
-        
-        #services {
-            background-color: #f9f9f9;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--hunter-green);
-            margin-bottom: 1rem;
-        }
-        
-        .section-title p {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-box {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .service-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background-color: var(--hunter-green-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .service-icon i {
-            color: var(--text-light);
-            font-size: 2rem;
-        }
-        
-        .service-box h3 {
-            color: var(--hunter-green);
-            margin-bottom: 1rem;
-        }
-        /* About Section */
-        
-        #about {
-            background-color: var(--cream);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            padding: 2rem;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            padding: 2rem;
-        }
-        
-        .about-text h2 {
-            color: var(--hunter-green);
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .skills {
-            margin-top: 2rem;
-        }
-        
-        .skill-item {
-            margin-bottom: 1.5rem;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background-color: #e9e9e9;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background-color: var(--hunter-green);
-            border-radius: 10px;
-            transition: width 1s ease;
-        }
-        /* Projects Section */
-        
-        #projects {
-            background-color: #f9f9f9;
-        }
-        
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-box {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .project-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .project-content {
-            background-color: white;
-            padding: 1.5rem;
-        }
-        
-        .project-content h3 {
-            color: var(--hunter-green);
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-        
-        .project-tag {
-            background-color: var(--hunter-green-light);
-            color: var(--text-light);
-            padding: 5px 10px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-links {
-            display: flex;
-        }
-        
-        .project-link {
-            margin-right: 1rem;
-            color: var(--hunter-green);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .project-link:hover {
-            color: var(--hunter-green-dark);
-        }
-        /* Contact Section */
-        
-        #contact {
-            background-color: var(--cream);
-        }
-        
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-info h2 {
-            color: var(--hunter-green);
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-        }
-        
-        .contact-info p {
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-        
-        .contact-details {
-            margin-bottom: 2rem;
-        }
-        
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--hunter-green-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-        }
-        
-        .contact-icon i {
-            color: var(--text-light);
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--hunter-green);
-        }
-        
-        textarea.form-control {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        .social-links {
-            display: flex;
-            margin-top: 1.5rem;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: var(--hunter-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: var(--hunter-green-dark);
-            transform: translateY(-3px);
-        }
-        
-        .social-link i {
-            color: var(--text-light);
-        }
-        
-        footer {
-            background-color: var(--hunter-green-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-        .error-message {
-        color: #ff4444;
-        font-size: 0.8rem;
-        margin-top: 0.3rem;
-        display: none;
-    }
-    
-    .form-message {
-        margin-top: 1rem;
-        padding: 0.8rem;
-        border-radius: 5px;
-        display: none;
-    }
-    
-    .form-message.success {
-        background-color: #d4edda;
-        color: #155724;
-        display: block;
-    }
-    
-    .form-message.error {
-        background-color: #f8d7da;
-        color: #721c24;
-        display: block;
-    }
-    
-    .form-control.error-border {
-        border-color: #ff4444;
-    }
-        /* Mobile Responsiveness */
-        
-        @media screen and (max-width: 768px) {
-            .burger {
-                display: block;
-            }
-            .nav-links {
-                position: absolute;
-                right: 0;
-                top: 70px;
-                background-color: var(--hunter-green-dark);
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                clip-path: circle(0px at 90% -10%);
-                -webkit-clip-path: circle(0px at 90% -10%);
-                transition: all 0.5s ease-out;
-                pointer-events: none;
-            }
-            .nav-links.active {
-                clip-path: circle(1000px at 90% -10%);
-                -webkit-clip-path: circle(1000px at 90% -10%);
-                pointer-events: all;
-            }
-            .nav-links li {
-                margin: 1rem 0;
-            }
-            .home-content,
-            .about-content {
-                flex-direction: column;
-            }
-            .home-text,
-            .home-image {
-                padding: 2rem 0;
-                text-align: center;
-            }
-            .home-image img {
-                max-width: 60%;
-            }
-            section {
-                padding: 100px 1rem;
-            }
-        }
-        /* Animation Classes */
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .fade-in.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .slide-in-left.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(100px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .slide-in-right.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    </style>
+    <title>RobiTech</title>   
+    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 
 <body>
@@ -641,9 +21,9 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li>
-                        <a href="admin.html" id="adminLink" style="display: none;">
+                        <!--a href="admin.html" id="adminLink" style="display: none;">
                           <i>🔒</i> Admin
-                        </a>
+                        </a-->
                       </li>
                 </ul>
                 <div class="burger">
@@ -682,21 +62,21 @@
                         <i>💻</i>
                     </div>
                     <h3>Web Development</h3>
-                    <p>Creating responsive and interactive websites with modern technologies like HTML5, CSS3, JavaScript, and various frameworks.</p>
+                    <p>Creating responsive and interactive websites with modern technologies like HTML5, CSS3, JavaScript, and their frameworks such as React with Next.js, Vue, Angular, Bootstrap, TailwindCSS, Material UI.</p>
                 </div>
                 <div class="service-box fade-in">
                     <div class="service-icon">
                         <i>📱</i>
                     </div>
                     <h3>Mobile Development</h3>
-                    <p>Building native and cross-platform mobile applications that provide seamless user experience on various devices.</p>
+                    <p>Building native mobile applications with Java and Kotlin for Android applications, Swift for IOS (Apple) and cross-platform mobile applications using React Native and Flutter, that provide seamless user experience on various mobile devices.</p>
                 </div>
                 <div class="service-box fade-in">
                     <div class="service-icon">
                         <i>🎨</i>
                     </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Designing intuitive user interfaces and exceptional user experiences that enhance user engagement and satisfaction.</p>
+                    <h3>Quality Engineer</h3>
+                    <p>Performing of various tests such as unit testing, performance & load testing to softwares, ensuring they are reliable, bug-free and meet user needs. Building test automation frameworks such as Selenium and creating CI/CD pipelines that include automated quality checks. </p>
                 </div>
             </div>
         </div>
@@ -710,10 +90,9 @@
                 </div>
                 <div class="about-text slide-in-right">
                     <h2>About Me</h2>
-                    <p>I'm a full-stack developer with experience in building web and mobile applications. My journey in programming started when I was in college, and since then, I've been passionate about creating digital solutions that solve real-world
-                        problems.
-                    </p>
-                    <p>I specialize in HTML/CSS, JavaScript, react, python, php, node.js and various other modern technologies. I'm constantly learning and adapting to new technologies to ensure I deliver the best possible solutions for my clients.</p>
+                    <p>I am a passionate and enthusiatic software developer and quanlity engineer with over 3 years experinece in building web and mobile apllications and performance of etss and automations on software systems. Over the years I have gained experience in building user-friendly, responsive, secure and scalable systems with my innate ability of turning complex problems into simple, elegant solutions</p>                    
+                    <br>
+                    <p>Over the years I have gained credible skills in various tech stacks such as React, Python, PHP, NodeJs, MySQL, PostgreSQL and MongoDB</p>
                     <div class="skills">
                         <div class="skill-item">
                             <div class="skill-name">
@@ -736,22 +115,73 @@
                         <div class="skill-item">
                             <div class="skill-name">
                                 <span>React</span>
-                                <span>65%</span>
+                                <span>85%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 65%;"></div>
+                                <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <span>Node.js</span>
-                                <span>50%</span>
+                                <span>70%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 50%;"></div>
+                                <div class="skill-progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Python</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>PHP</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%;"></div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <section id="education">
+        <div class="container">
+            <div class="section-title fade-in">
+                <i class="fa-solid fa-book icon"></i>
+                <h2>Education</h2>
+            </div>
+            <div class="education-container">
+                <div class="education-box fade-in">
+                    <!--div class="education-icon">
+                        <i>💻</i>
+                    </div-->
+                    <h3>Egerton University</h3>
+                    <p>Bachelor of Science in Computer Science<br> Second </p>
+                    <p>Year 2020 - 2025</p>
+                </div>
+                <div class="education-box fade-in">
+                    <!--div class="education-icon">
+                        <i>📱</i>
+                    </div-->
+                    <h3>Meru School</h3>
+                    <p>Kenya Certificate of Secondary Education</p>
+                </div>
+                <div class="education-box fade-in">
+                    <!--div class="education-icon">
+                        <i>🎨</i>
+                    </div-->
+                    <h3>Moi Nyeri Complex Primary School</h3>
+                    <p>Kenya Certificate of Primary Education </p>
                 </div>
             </div>
         </div>
@@ -765,7 +195,7 @@
             </div>
             <div class="projects-container">
                 <div class="project-box fade-in">
-                    <img src="images/clinic.jpg" alt="Project 1" class="project-img">
+                    <img src="images/clinic2.jpeg" alt="Project 1" class="project-img">
                     <div class="project-content">
                         <h3>Clinic System</h3>
                         <p>A full-featured online clinic system with appointment booking, payment integration, and admin dashboard.</p>
@@ -775,40 +205,39 @@
                             <span class="project-tag">MySQL</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
+                            <!--a href="#" class="project-link">View Demo</a-->
+                            <a href="https://github.com/MuchiriRobee/medicare" class="project-link">GitHub</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-box fade-in">
-                    <img src="images/chicken.jpg" alt="Project 2" class="project-img">
+                    <img src="images/kuku.jpeg" alt="Project 2" class="project-img">
                     <div class="project-content">
                         <h3>Poultry Farm Management App</h3>
                         <p>A collaborative poultry farm manager with schedules and bookings, user authentication, and team features.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Vue.js</span>
-                            <span class="project-tag">Firebase</span>
-                            <span class="project-tag">Tailwind</span>
+                            <span class="project-tag">React Native</span>
+                            <span class="project-tag">PostgreSQL</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
+                            <!--a href="#" class="project-link">View Demo</a-->
+                            <a href="https://github.com/MuchiriRobee/poultryfarm" class="project-link">GitHub</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-box fade-in">
-                    <img src="/api/placeholder/400/250" alt="Project 3" class="project-img">
+                    <img src="images/ecomm.jpeg" alt="Project 3" class="project-img">
                     <div class="project-content">
-                        <h3>Fitness Tracking System</h3>
-                        <p>A mobile app that helps users track their workouts, nutrition, and health metrics.</p>
+                        <h3>Ecommerce System</h3>
+                        <p>A complete role-based and secure ecommerce system with order creation for customers, order management by admin and payment integration for the orders and e- wallet funds withdrawal for the customers.</p>
                         <div class="project-tags">
                             <span class="project-tag">React Native</span>
                             <span class="project-tag">Express</span>
                             <span class="project-tag">PostgreSQL</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
+                            <a href="https://ecommercefrontend-vert.vercel.app" class="project-link">View Demo</a>
+                            <a href="https://github.com/MuchiriRobee/fcl-frontend" class="project-link">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -841,23 +270,29 @@
                         </div>
                         <div class="contact-detail">
                             <div class="contact-icon">
-                                <i>📍</i>
+                               <a href="https://www.google.com/maps?q=Nairobi,+Kenya" target="_blank"><i class="fa-solid fa-location"></i></a>
                             </div>
                             <span>Nairobi, Kenya</span>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i>📘</i>
+                        <a href="https://www.facebook.com/robin.muchiri.3" class="social-link">
+                            <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i>🐦</i>
+                        <a href="https://x.com/lurstborn" class="social-link">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i>🔗</i>
+                        <a href="https://www.linkedin.com/in/robin-muchiri/" class="social-link">
+                            <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i>🐙</i>
+                        <a href="https://wa.me/254743371171" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:robeemuchiri@gmail.com" class="social-link">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="tel:254743371171" class="social-link">
+                            <i class="fa-solid fa-phone"></i>
                         </a>
                     </div>
                 </div>
