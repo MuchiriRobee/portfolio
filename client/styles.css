@@ -264,7 +264,7 @@
         .about-image {
             flex: 1;
             min-width: 300px;
-            padding-right: 40px;
+            padding-right: 10px;
         }
         
         .about-image img {
