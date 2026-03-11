@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robinson Muriuki — Software Developer & QA Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Clash Display + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/src/index.js" defer></script>
+</head>
+<body>
+
+  <!-- ░░ SCROLL PROGRESS BAR ░░ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ░░ MOBILE HAMBURGER ░░ -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- ░░ SIDEBAR NAVIGATION ░░ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-dot"></span>
+      <span class="brand-text">RM</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#home" class="nav-link active" data-section="home">
+          <i class="ph-bold ph-house"></i><span>Home</span>
+        </a></li>
+        <li><a href="#about" class="nav-link" data-section="about">
+          <i class="ph-bold ph-user"></i><span>About</span>
+        </a></li>
+        <li><a href="#education" class="nav-link" data-section="education">
+          <i class="ph-bold ph-graduation-cap"></i><span>Education</span>
+        </a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">
+          <i class="ph-bold ph-briefcase"></i><span>Experience</span>
+        </a></li>
+        <li><a href="#certifications" class="nav-link" data-section="certifications">
+          <i class="ph-bold ph-certificate"></i><span>Certifications</span>
+        </a></li>
+        <li><a href="#technologies" class="nav-link" data-section="technologies">
+          <i class="ph-bold ph-cpu"></i><span>Technologies</span>
+        </a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">
+          <i class="ph-bold ph-code-block"></i><span>Projects</span>
+        </a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">
+          <i class="ph-bold ph-envelope"></i><span>Contact</span>
+        </a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="ph-bold ph-sun" id="themeIcon"></i>
+      </button>
+      <span class="sidebar-status">
+        <span class="status-dot"></span>Available
+      </span>
+    </div>
+  </aside>
+
+  <!-- ░░ OVERLAY (mobile) ░░ -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ░░ MAIN CONTENT ░░ -->
+  <main class="main-content" id="mainContent">
+
+    <!-- ── TOP BAR ── -->
+    <header class="topbar">
+      <div class="topbar-name">
+        <span class="topbar-greeting">Hello, I'm</span>
+        <h1 class="topbar-title">Robinson Muriuki</h1>
+      </div>
+      <div class="topbar-tags">
+        <span class="tag">Software Dev</span>
+        <span class="tag">QA Engineer</span>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         §1  HOME
+    ══════════════════════════════════════ -->
+    <section id="home" class="section section-home">
+      <!-- Floating background shapes -->
+      <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
+
+      <div class="home-grid">
+        <!-- Profile image -->
+        <div class="home-image reveal">
+          <div class="profile-ring">
+            <div class="profile-img-wrap">
+              <img src="assets/robee.jpeg" alt="Robinson" class="profile-img" />
+            </div>
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+          </div>
+          <div class="profile-badge">
+            <i class="ph-bold ph-check-circle"></i> Open to Work
+          </div>
+        </div>
+
+        <!-- Intro text -->
+        <div class="home-intro reveal reveal-delay-1">
+          <p class="intro-eyebrow"> Welcome to my portfolio</p>
+          <h2 class="intro-heading">
+            I build <span class="accent">reliable</span> software &amp;<br/>
+            ensure <span class="accent">flawless</span> quality.
+          </h2>
+          <p class="intro-sub" id="typedSubtitle">
+            Full-Stack Developer with <strong>3+ years</strong> crafting scalable applications and a QA Engineer who turns chaos into confidence through automated testing strategies.
+          </p>
+          <div class="intro-stats">
+            <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Exp.</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Projects</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">99%</span><span class="stat-label">Test Coverage</span></div>
+          </div>
+          <div class="intro-actions">
+            <a href="#" class="btn btn-primary" download>
+              <i class="ph-bold ph-download-simple"></i> Download Resume
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="ph-bold ph-chat-dots"></i> Let's Talk
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         §2  ABOUT
+    ══════════════════════════════════════ -->
+    <section id="about" class="section section-about">
+      <div class="section-header reveal">
+        <span class="section-label"></span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-lead">I'm a software developer and quality engineering professional based in <strong>Nairobi,Kenya</strong>, passionate about building clean, maintainable systems.</p>
+          <p>With a background spanning both development and quality assurance, I bridge the gap between building fast and building right. I believe software quality isn't a final step — it's woven into every line of code from day one.</p>
+          <p>When I'm not writing tests or architecting features, I contribute to open-source projects and learn more from experienced software developers and quality engineers.</p>
+          <p class="about-goal"><i class="ph-bold ph-target"></i> <strong>Career Goal:</strong> To lead quality-first engineering teams that ship high-impact software without compromising reliability.</p>
+        </div>
+
+        <div class="about-skills reveal reveal-delay-1">
+          <h3 class="skills-heading">Core Competencies</h3>
+          <div class="skill-bars">
+            <div class="skill-bar">
+              <div class="skill-info"><span>Test Automation</span><span>95%</span></div>
+              <div class="bar"><div class="bar-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Full-Stack Development</span><span>88%</span></div>
+              <div class="bar"><div class="bar-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>CI/CD Pipelines</span><span>82%</span></div>
+              <div class="bar"><div class="bar-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>API Testing</span><span>90%</span></div>
+              <div class="bar"><div class="bar-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Performance Testing</span><span>78%</span></div>
+              <div class="bar"><div class="bar-fill" data-width="78"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         §3  EDUCATION
+    ══════════════════════════════════════ -->
+    <section id="education" class="section section-education">
+      <div class="section-header reveal">
+        <span class="section-label"></span>
+        <h2 class="section-title">Academic Background</h2>
+      </div>
+
+      <div class="edu-grid">
+                <div class="edu-card reveal">
+          <div class="edu-card-top">
+            <div class="edu-logo">💻</div>
+            <div class="edu-badge">Bootcamp</div>
+          </div>
+          <h3>Quality Assurance/Quality Engineering</h3>
+          <p class="edu-degree">Full-Stack Development & Quality Engineering</p>
+          <p class="edu-years">September 2025 - December 2025</p>
+          <p class="edu-desc">Intensive 14-week program focused on Quality Assurance methodologies, test-driven development, and cloud-native architectures.</p>
+        </div>
+        <div class="edu-card reveal reveal-delay-1">
+          <div class="edu-card-top">
+            <div class="edu-logo">🎓</div>
+            <div class="edu-badge">B.Sc.</div>
+          </div>
+          <h3>Egerton University</h3>
+          <p class="edu-degree">Bachelor of Science in Computer Science</p>
+          <p class="edu-years">2020 - 2025</p>
+          <p class="edu-desc">Specialization in Software Engineering & Distributed Systems. Graduated with Honors.</p>
+        </div>
+
+        <div class="edu-card reveal reveal-delay-2">
+          <div class="edu-card-top">
+            <div class="edu-logo">🏛️</div>
+            <div class="edu-badge">K.C.S.E.</div>
+          </div>
+          <h3>Meru School</h3>
+          <p class="edu-degree">Kenya Certificate of Secondary Education</p>
+          <p class="edu-years">2016 - 2019</p>
+          <p class="edu-desc">Completion of my High school education</p>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         §4  EXPERIENCE
+    ══════════════════════════════════════ -->
+    <section id="experience" class="section section-experience">
+      <div class="section-header reveal">
+        <span class="section-label"></span>
+        <h2 class="section-title">Work History</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Senior QA Automation Engineer</h3>
+                <p class="exp-company"><i class="ph-bold ph-buildings"></i> TechNova Inc.</p>
+              </div>
+              <span class="exp-years">2022 – Present</span>
+            </div>
+            <div class="exp-body">
+              <p>Lead a team of 4 QA engineers, architecting end-to-end test frameworks using Selenium and Cypress that reduced regression time by 70%.</p>
+              <ul>
+                <li>Built automated CI/CD pipelines integrated with Jenkins and GitHub Actions</li>
+                <li>Established a company-wide BDD testing culture using Cucumber</li>
+                <li>Reduced production defect escape rate by 85% through shift-left testing strategies</li>
+                <li>Mentored 6 junior QA engineers in automation best practices</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Full-Stack Software Developer</h3>
+                <p class="exp-company"><i class="ph-bold ph-buildings"></i> CloudBridge Solutions</p>
+              </div>
+              <span class="exp-years">2020 – 2022</span>
+            </div>
+            <div class="exp-body">
+              <p>Developed and maintained microservices architecture for a B2B SaaS platform serving 200k+ users across three continents.</p>
+              <ul>
+                <li>Engineered RESTful APIs with Java Spring Boot handling 10k+ req/min</li>
+                <li>Migrated monolith to containerized microservices using Docker & Kubernetes</li>
+                <li>Achieved 95% unit test coverage using JUnit and Mockito</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">QA Engineer</h3>
+                <p class="exp-company"><i class="ph-bold ph-buildings"></i> PixelForge Digital</p>
+              </div>
+              <span class="exp-years">2018 – 2020</span>
+            </div>
+            <div class="exp-body">
+              <p>Performed comprehensive manual and automated testing for a portfolio of 12 web and mobile applications.</p>
+              <ul>
+                <li>Created 500+ test cases covering functional, regression, and performance testing</li>
+                <li>Introduced API testing with Postman, reducing integration bugs by 40%</li>
+                <li>Collaborated with product teams to refine acceptance criteria and user stories</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         §5  CERTIFICATIONS
+    ══════════════════════════════════════ -->
+    <section id="certifications" class="section section-certifications">
+      <div class="section-header reveal">
+        <span class="section-label">05 / Certifications</span>
+        <h2 class="section-title">Licenses &amp; Certifications</h2>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card reveal">
+          <div class="cert-logo cert-logo-aws">☁️</div>
+          <h3>AWS Certified Developer</h3>
+          <p>Amazon Web Services</p>
+          <span class="cert-year">2023</span>
+          <a href="#" class="btn-verify">
+            <i class="ph-bold ph-seal-check"></i> Verify Credential
+          </a>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-logo cert-logo-istqb">🧪</div>
+          <h3>ISTQB Certified Tester</h3>
+          <p>Advanced Level — Test Automation</p>
+          <span class="cert-year">2022</span>
+          <a href="#" class="btn-verify">
+            <i class="ph-bold ph-seal-check"></i> Verify Credential
+          </a>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-2">
+          <div class="cert-logo cert-logo-gcp">🔷</div>
+          <h3>Google Cloud Professional</h3>
+          <p>Cloud DevOps Engineer</p>
+          <span class="cert-year">2023</span>
+          <a href="#" class="btn-verify">
+            <i class="ph-bold ph-seal-check"></i> Verify Credential
+          </a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-logo cert-logo-oracle">🗄️</div>
+          <h3>Oracle Java SE 11</h3>
+          <p>Oracle Certified Professional</p>
+          <span class="cert-year">2021</span>
+          <a href="#" class="btn-verify">
+            <i class="ph-bold ph-seal-check"></i> Verify Credential
+          </a>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-logo cert-logo-scrum">🔄</div>
+          <h3>Certified Scrum Master</h3>
+          <p>Scrum Alliance — CSM</p>
+          <span class="cert-year">2021</span>
+          <a href="#" class="btn-verify">
+            <i class="ph-bold ph-seal-check"></i> Verify Credential
+          </a>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-2">
+          <div class="cert-logo cert-logo-docker">🐳</div>
+          <h3>Docker Certified Associate</h3>
+          <p>Docker, Inc.</p>
+          <span class="cert-year">2022</span>
+          <a href="#" class="btn-verify">
+            <i class="ph-bold ph-seal-check"></i> Verify Credential
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         §6  TECHNOLOGIES
+    ══════════════════════════════════════ -->
+    <section id="technologies" class="section section-technologies">
+      <div class="section-header reveal">
+        <span class="section-label">06 / Technologies</span>
+        <h2 class="section-title">Tech Stack</h2>
+      </div>
+
+      <div class="tech-categories">
+        <div class="tech-category reveal">
+          <h3 class="tech-cat-title"><i class="ph-bold ph-code"></i> Languages</h3>
+          <div class="tech-grid">
+            <div class="tech-card"><span class="tech-icon">☕</span><span>Java</span></div>
+            <div class="tech-card"><span class="tech-icon">🟨</span><span>JavaScript</span></div>
+            <div class="tech-card"><span class="tech-icon">🐍</span><span>Python</span></div>
+            <div class="tech-card"><span class="tech-icon">🔷</span><span>TypeScript</span></div>
+            <div class="tech-card"><span class="tech-icon">🗄️</span><span>SQL</span></div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal reveal-delay-1">
+          <h3 class="tech-cat-title"><i class="ph-bold ph-wrench"></i> Frameworks</h3>
+          <div class="tech-grid">
+            <div class="tech-card"><span class="tech-icon">⚛️</span><span>React</span></div>
+            <div class="tech-card"><span class="tech-icon">🍃</span><span>Spring Boot</span></div>
+            <div class="tech-card"><span class="tech-icon">🟢</span><span>Node.js</span></div>
+            <div class="tech-card"><span class="tech-icon">🅰️</span><span>Angular</span></div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal reveal-delay-2">
+          <h3 class="tech-cat-title"><i class="ph-bold ph-flask"></i> QA &amp; Testing</h3>
+          <div class="tech-grid">
+            <div class="tech-card"><span class="tech-icon">🤖</span><span>Selenium</span></div>
+            <div class="tech-card"><span class="tech-icon">🌲</span><span>Cypress</span></div>
+            <div class="tech-card"><span class="tech-icon">📮</span><span>Postman</span></div>
+            <div class="tech-card"><span class="tech-icon">🧪</span><span>JUnit</span></div>
+            <div class="tech-card"><span class="tech-icon">🥒</span><span>Cucumber</span></div>
+            <div class="tech-card"><span class="tech-icon">🔥</span><span>JMeter</span></div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal">
+          <h3 class="tech-cat-title"><i class="ph-bold ph-cloud"></i> DevOps &amp; Tools</h3>
+          <div class="tech-grid">
+            <div class="tech-card"><span class="tech-icon">🐳</span><span>Docker</span></div>
+            <div class="tech-card"><span class="tech-icon">☸️</span><span>Kubernetes</span></div>
+            <div class="tech-card"><span class="tech-icon">🐙</span><span>Git</span></div>
+            <div class="tech-card"><span class="tech-icon">🏗️</span><span>Jenkins</span></div>
+            <div class="tech-card"><span class="tech-icon">🐧</span><span>Linux</span></div>
+            <div class="tech-card"><span class="tech-icon">☁️</span><span>AWS</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         §7  PROJECTS
+    ══════════════════════════════════════ -->
+    <section id="projects" class="section section-projects">
+      <div class="section-header reveal">
+        <span class="section-label">07 / Projects</span>
+        <h2 class="section-title">Featured Work</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <div class="project-img-placeholder gradient-1">
+              <i class="ph-bold ph-test-tube"></i>
+            </div>
+            <div class="project-overlay">
+              <span>QA Framework</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>AutoTest Pro</h3>
+            <p>An enterprise-grade test automation framework built on Selenium Grid with parallel execution, smart retry logic, and AI-powered flaky test detection.</p>
+            <div class="project-tags">
+              <span>Java</span><span>Selenium</span><span>TestNG</span><span>Docker</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn-sm btn-demo"><i class="ph-bold ph-arrow-square-out"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-github"><i class="ph-bold ph-github-logo"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img">
+            <div class="project-img-placeholder gradient-2">
+              <i class="ph-bold ph-chart-line-up"></i>
+            </div>
+            <div class="project-overlay">
+              <span>SaaS Dashboard</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>MetricsDash</h3>
+            <p>Real-time analytics dashboard for QA teams to monitor test coverage trends, failure heatmaps, and release risk scores across multiple CI pipelines.</p>
+            <div class="project-tags">
+              <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Chart.js</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn-sm btn-demo"><i class="ph-bold ph-arrow-square-out"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-github"><i class="ph-bold ph-github-logo"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img">
+            <div class="project-img-placeholder gradient-3">
+              <i class="ph-bold ph-robot"></i>
+            </div>
+            <div class="project-overlay">
+              <span>AI Tool</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>TestGen AI</h3>
+            <p>AI-powered test case generator that analyzes REST API specs and automatically generates comprehensive Postman collections and Cypress test suites.</p>
+            <div class="project-tags">
+              <span>Python</span><span>OpenAI</span><span>Postman</span><span>Cypress</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn-sm btn-demo"><i class="ph-bold ph-arrow-square-out"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-github"><i class="ph-bold ph-github-logo"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img">
+            <div class="project-img-placeholder gradient-4">
+              <i class="ph-bold ph-shopping-cart"></i>
+            </div>
+            <div class="project-overlay">
+              <span>E-Commerce</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>ShopSphere</h3>
+            <p>Full-stack e-commerce platform with microservices architecture, event-driven order processing, and a fully automated end-to-end regression suite.</p>
+            <div class="project-tags">
+              <span>Java</span><span>Spring Boot</span><span>React</span><span>Kubernetes</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn-sm btn-demo"><i class="ph-bold ph-arrow-square-out"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-github"><i class="ph-bold ph-github-logo"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img">
+            <div class="project-img-placeholder gradient-5">
+              <i class="ph-bold ph-activity"></i>
+            </div>
+            <div class="project-overlay">
+              <span>Performance</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>LoadLens</h3>
+            <p>Distributed load testing orchestration tool that spins up ephemeral JMeter clusters on AWS and generates actionable performance reports automatically.</p>
+            <div class="project-tags">
+              <span>Python</span><span>AWS</span><span>JMeter</span><span>Terraform</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn-sm btn-demo"><i class="ph-bold ph-arrow-square-out"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-github"><i class="ph-bold ph-github-logo"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img">
+            <div class="project-img-placeholder gradient-6">
+              <i class="ph-bold ph-shield-check"></i>
+            </div>
+            <div class="project-overlay">
+              <span>Security</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>SecureCI</h3>
+            <p>Automated security testing pipeline integrating OWASP ZAP, dependency scanning, and SAST tools directly into GitHub Actions workflows.</p>
+            <div class="project-tags">
+              <span>OWASP ZAP</span><span>GitHub Actions</span><span>Python</span><span>Docker</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn-sm btn-demo"><i class="ph-bold ph-arrow-square-out"></i> Live Demo</a>
+            <a href="#" class="btn-sm btn-github"><i class="ph-bold ph-github-logo"></i> GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         §8  CONTACT
+    ══════════════════════════════════════ -->
+    <section id="contact" class="section section-contact">
+      <div class="section-header reveal">
+        <span class="section-label">08 / Contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Form -->
+        <div class="contact-form-wrap reveal">
+          <h3>Send a Message</h3>
+          <div class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="button" class="btn btn-primary btn-full" id="sendBtn">
+              <i class="ph-bold ph-paper-plane-tilt"></i> Send Message
+            </button>
+            <div class="form-success" id="formSuccess" style="display:none">
+              <i class="ph-bold ph-check-circle"></i> Message sent! I'll get back to you soon.
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info reveal reveal-delay-1">
+          <h3>Contact Details</h3>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ph-bold ph-envelope-simple"></i></div>
+              <div>
+                <span class="contact-label">Email</span>
+                <a href="mailto:alex@morgan.dev">alex@morgan.dev</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ph-bold ph-phone"></i></div>
+              <div>
+                <span class="contact-label">Phone</span>
+                <a href="tel:+14155550123">+1 (415) 555-0123</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ph-bold ph-map-pin"></i></div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span>San Francisco, CA, USA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-section">
+            <h4>Find Me Online</h4>
+            <div class="social-links">
+              <a href="#" class="social-btn" aria-label="LinkedIn">
+                <i class="ph-bold ph-linkedin-logo"></i>
+              </a>
+              <a href="#" class="social-btn" aria-label="GitHub">
+                <i class="ph-bold ph-github-logo"></i>
+              </a>
+              <a href="#" class="social-btn" aria-label="Twitter">
+                <i class="ph-bold ph-twitter-logo"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>Designed &amp; Built with <span class="heart">♥</span> by <strong>Alex Morgan</strong> &copy; 2025</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
