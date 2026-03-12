@@ -600,7 +600,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 .stat-num {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--accent);
