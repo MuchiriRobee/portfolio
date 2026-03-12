@@ -894,6 +894,15 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-size: 2.2rem;
   margin-bottom: 4px;
   display: block;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+
+.cert-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cert-card h3 {
@@ -976,6 +985,12 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 
 .tech-icon { font-size: 1.8rem; line-height: 1; }
+
+.tech-icon img{
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
 
 .tech-card span:last-child {
   font-size: 0.78rem;
